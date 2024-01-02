@@ -13,9 +13,11 @@
 <%--    <c:forEach var="filename" items="${fileNames}">--%>
 <%--        <li><a href="${pageContext.request.contextPath}/DownloadFile.do?fileName=${filename}">${filename}</a></li>--%>
 <%--    </c:forEach>--%>
-    <c:forEach var="file" items="${fileNames}">
-        <c:set var="downloadPath" value="${pageContext.request.contextPath}/DownloadFile.do?fileName=${file}" />
-            <li><a href="<c:out value='${downloadPath}'/>" download="${file}">${file}</a></li>
+    <c:forEach var="filename" items="${fileNames}">
+        <c:set var="downloadPath" value="${pageContext.request.contextPath}/DownloadFile.do?fileName=${filename}" />
+            <li>
+                <a href="<c:out value='${downloadPath}'/>" download="${filename}">${filename}</a>
+            </li>
     </c:forEach>
 </ul>
 
